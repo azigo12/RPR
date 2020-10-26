@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <TableView fx:id="tableViewGradovi">
+            <columns>
+                <TableColumn fx:id="colGradId" minWidth="120" text="%id" />
+                <TableColumn fx:id="colGradNaziv" minWidth="120" text="%naziv" />
+                <TableColumn fx:id="colGradStanovnika" minWidth="120" text="%stanovnika" />
+                <TableColumn fx:id="colGradDrzava" minWidth="120" text="%drzava" />
+                <TableColumn fx:id="colSlika" minWidth="120" text="%putanjaSlike" />
+                <TableColumn fx:id="colPostanskiBroj" minWidth="120" text="%postanskiBroj" />
+            </columns>
+        </TableView>
+    </center>
+
+    <right>
+        <VBox spacing="10" prefWidth="140">
+            <Button fx:id="btnDodajGrad" onAction="#dodajGrad" prefWidth="140" text="%dodajGrad" />
+            <Button fx:id="btnDodajDrzavu" onAction="#dodajDrzavu" prefWidth="140" text="%dodajDrzavu" />
+            <Button fx:id="btnIzmijeniGrad" onAction="#izmijeniGrad" prefWidth="140" text="%izmijeniGrad" />
+            <Button fx:id="btnObrisiGrad" onAction="#obrisiGrad" prefWidth="140" text="%obrisiGrad" />
+            <Button fx:id="btnStampa" onAction="#stampajIzvjestaj" prefWidth="140" text="%stampa" />
+            <Button fx:id="btnJezik" onAction="#promijeniJezik" prefWidth="140" text="%promijeniJezik" />
+        </VBox>
+    </right>
+
+</BorderPane>

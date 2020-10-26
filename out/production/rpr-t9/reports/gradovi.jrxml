@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gradovi" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1f690a3-5977-4467-85f8-6b0bcd5b7210">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="469"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="519"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name = "reportsDirPath" class = "java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT  g.id, g.naziv, g.broj_stanovnika, d.naziv
+FROM grad g, drzava d
+WHERE g.drzava=d.id
+ORDER BY g.broj_stanovnika DESC]]>
+	</queryString>
+	<field name="id" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grad"/>
+	</field>
+	<field name="naziv" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="naziv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grad"/>
+	</field>
+	<field name="broj_stanovnika" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="broj_stanovnika"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grad"/>
+	</field>
+	<field name="COLUMN_4" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="naziv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="drzava"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<image>
+				<reportElement x="290" y="0" width="286" height="64" uuid="363fa2ad-70fc-43cb-9062-e6c62c7f48fc"/>
+				<imageExpression><![CDATA[new File($P{reportsDirPath}, "leaf_banner_gray.png")]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="280" height="57" uuid="6f9c1004-6140-4588-9c4f-d75824835765"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Gradovi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="50" width="157" height="22" uuid="8e16dabd-2e54-471b-9652-83e1d55379ec"/>
+				<text><![CDATA[i države]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="544e89f7-0fd1-4142-aa23-e335e3be7007"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="10" width="138" height="24" uuid="7c8cac73-5f7d-40cc-8c90-fef993bd755a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a52ddb5-021d-439d-8180-1becff20d976"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="10" width="138" height="24" uuid="ee9a26eb-d400-414e-8155-6a25f62ff13c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86f3a323-ce62-4f85-894b-52f5b74e14c2"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Naziv	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="10" width="138" height="24" uuid="794e11d4-237c-450c-b7a6-3d34e7ff4b7e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2310d290-cf1a-46b1-8867-9b72835df1e0"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Broj stanovnika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="10" width="138" height="24" uuid="98945dba-c6e7-4e56-8dd6-6fce2ab0b26d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1f10028-9c4b-4e6d-8f14-0bd03059433c"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Drzava]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="cb229859-ab9a-4aa3-afa2-84439642f4ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="af1089a7-c24a-4ab1-8664-3f21ea8afd02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a52ddb5-021d-439d-8180-1becff20d976"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="6e9591f4-b311-488a-8390-7b65a8bdfbf6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86f3a323-ce62-4f85-894b-52f5b74e14c2"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{naziv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="fbbead01-1eb4-43c1-b341-437a8fae3631">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2310d290-cf1a-46b1-8867-9b72835df1e0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{broj_stanovnika}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="aabae47c-d17b-4d16-8f15-5cb3bcfb270c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1f10028-9c4b-4e6d-8f14-0bd03059433c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="401e0e59-de38-4dd2-8257-418cb489177c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="deb23d85-47bb-4de6-978e-113ff117188c"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="c6ce76ba-6e11-41e2-9415-72dc2eff001b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="5a79d2a0-bcde-4ad5-adf0-c4eb2066f6dd"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
